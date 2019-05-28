@@ -1,3 +1,5 @@
+package largestPermutation;
+
 import java.util.Scanner;
 
 public class Solution {
@@ -21,7 +23,7 @@ public class Solution {
 			valueToIndex[inputArray[i]] = i;
 		}
 		scanner.close();
-    
+
 		calculateLargestPermutation(valueToIndex, maximumSwaps);
 		printLargestPermutation();
 	}
@@ -29,7 +31,7 @@ public class Solution {
 	/**
 	 * The method calculates the largest lexicographical value array that can be
 	 * made from the original input array, with a given number of maximum swaps, and
-	 * modifies this array accordingly.
+	 * modifies the original input array accordingly.
 	 */
 	public static void calculateLargestPermutation(int[] valueToIndex, int maximumSwaps) {
 		int largestValue = inputArray.length;
@@ -40,10 +42,10 @@ public class Solution {
 				int temp = inputArray[index];
 				inputArray[index] = largestValue;
 				inputArray[valueToIndex[largestValue]] = temp;
-        
+
 				/**
 				 * Map the low value to the index of the currently swapped large value so that
-				 * the permutation order in the modified array is preserved.
+				 * the lexicographical order in the modified array is preserved.
 				 */
 				valueToIndex[temp] = valueToIndex[largestValue];
 				maximumSwaps--;
@@ -54,7 +56,7 @@ public class Solution {
 	}
 
 	/**
-	 * Print the modified input array on one line.
+	 * Print the largest lexicographical value array on one line.
 	 */
 	private static void printLargestPermutation() {
 		for (int i = 0; i < inputArray.length; i++) {
