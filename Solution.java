@@ -28,7 +28,7 @@ public class Solution {
 
 	/**
 	 * The method calculates the largest lexicographical value array that can be
-	 * made from the original input array, with given a number of maximum swaps, and
+	 * made from the original input array, with a given number of maximum swaps, and
 	 * modifies this array accordingly.
 	 */
 	public static void calculateLargestPermutation(int[] valueToIndex, int maximumSwaps) {
